@@ -8,21 +8,34 @@ import {
 
 <script lang="ts">
 export default {
+  methods: {
+    handleClick() {
+      if (this.isFadingEnable) {
+        this.isFading = true;
+        setTimeout(() => {
+          this.$router.push({ path: "/home" });
+        }, 3000);
+      }
+    },
+  },
   data() {
     return {
       showElement: false,
+      isFading: false,
+      isFadingEnable: false,
     };
   },
   mounted() {
     setTimeout(() => {
       this.showElement = true;
+      this.isFadingEnable = true;
     }, 3000);
   },
 };
 </script>
 
 <template>
-  <main>
+  <main @click="handleClick" v-bind:class="{ fade_out: isFading }">
     <header>
       <h1>
         <FontAwesomeIcon :icon="faTriangleExclamation" />WARNING-HEALTH AND
@@ -84,5 +97,10 @@ main > header > h1 {
 }
 main > article > h2 {
   font-size: 3rem;
+}
+
+.fade_out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 </style>
