@@ -1,36 +1,38 @@
 <script lang="ts">
 export default {
   data() {
-    return {
-      showMenu: false,
-    };
+      return {
+        showMenu: false
+      }
   },
   mounted() {
-    setTimeout(() => {
-      this.showMenu = true;
-    }, 2000);
+      setTimeout(() => {
+        this.showMenu = true;
+      }, 500)
   },
-};
+}
 </script>
 
+
 <template>
-  <main class="fade_in" v-show="showMenu">
+  <main v-show="showMenu">
     <header>
-      <h2>Projects</h2>
+      <div><h3>test</h3></div>
     </header>
   </main>
   <footer></footer>
 </template>
 
 <style scoped lang="scss">
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 header {
   display: flex;
 }
-header > * {
+header > div {
+  border-color: grey;
+  border-radius: 10%;
   flex: 1;
-}
-.fade_in {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 </style>
