@@ -1,21 +1,20 @@
 <script lang="ts">
 export default {
   data() {
-      return {
-        showMenu: false
-      }
+    return {
+      showMenu: { opacity: 0, transition: "" },
+    };
   },
   mounted() {
-      setTimeout(() => {
-        this.showMenu = true;
-      }, 500)
+    setTimeout(() => {
+      this.showMenu = { opacity: 1, transition: "opacity 0.5s ease-in-out" };
+    }, 500);
   },
-}
+};
 </script>
 
-
 <template>
-  <main v-show="showMenu">
+  <main v-bind:style="showMenu">
     <header>
       <div><h3>test</h3></div>
     </header>

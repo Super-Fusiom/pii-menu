@@ -38,8 +38,10 @@ export default {
   <main @click="handleClick" v-bind:class="{ fade_out: isFading }">
     <header>
       <h1>
-        <FontAwesomeIcon :icon="faTriangleExclamation" />WARNING-HEALTH AND
-        SAFETY
+        <FontAwesomeIcon
+          style="color: yellow"
+          :icon="faTriangleExclamation"
+        />WARNING-HEALTH AND SAFETY
       </h1>
     </header>
     <article>
@@ -47,6 +49,12 @@ export default {
         THIS IS A PARODY AND TO SHOW ALL OF MY PROJECTS<br />I AM ALSO NOT A
         LAWYER<br />ENJOY!
       </h2>
+      <h3>
+        Repo is at
+        <a href="https://github.com/Super-Fusiom/pii-menu"
+          >https://github.com/Super-Fusiom/pii-menu</a
+        >
+      </h3>
     </article>
     <footer v-show="showElement">
       PRESS <FontAwesomeIcon :icon="faComputerMouse" /> TO CONTINUE
