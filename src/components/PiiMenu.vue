@@ -1,3 +1,37 @@
+<script lang="ts">
+export default {
+  data() {
+    return {
+      showMenu: { opacity: 0, transition: "" },
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showMenu = { opacity: 1, transition: "opacity 0.5s ease-in-out" };
+    }, 500);
+  },
+};
+</script>
+
 <template>
-  <h4>3</h4>
+  <main v-bind:style="showMenu">
+    <header>
+      <div><h3>test</h3></div>
+    </header>
+  </main>
+  <footer></footer>
 </template>
+
+<style scoped lang="scss">
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+  display: flex;
+}
+header > div {
+  border-color: grey;
+  border-radius: 10%;
+  flex: 1;
+}
+</style>
