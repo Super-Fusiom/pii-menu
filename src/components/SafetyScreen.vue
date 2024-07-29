@@ -78,7 +78,7 @@ export default {
 footer {
   animation: blink 1s linear infinite;
   font-size: 3rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding-bottom: 20rem;
 }
 

@@ -16,7 +16,7 @@ export default {
 <template>
   <main v-bind:style="showMenu">
     <header>
-      <div><h3>test</h3></div>
+      <div><p>Github</p></div>
     </header>
   </main>
   <footer></footer>
@@ -28,6 +28,8 @@ export default {
 }
 header {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 header > div {
   border-color: grey;
